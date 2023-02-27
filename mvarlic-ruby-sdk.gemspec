@@ -1,10 +1,10 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "transbank/sdk/version"
+require "mvarlic/sdk/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "transbank-sdk"
+  spec.name          = "mvarlic-ruby-sdk"
   spec.version       = Transbank::Sdk::VERSION
   spec.authors       = ["Transbank Developers"]
   spec.email         = ["transbankdevelopers@continuum.cl"]
