@@ -1,0 +1,16 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/.DS_Store/
+.idea
+*.gem
+Gemfile.lock
+.built
+.bundled
+.rakeTasks
+.DS_Store
