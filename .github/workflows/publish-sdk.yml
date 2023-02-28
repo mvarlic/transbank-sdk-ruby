@@ -7,16 +7,12 @@ on:
     tags:
       - v*
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    steps:
-      - uses: actions/checkout@v3.1.0
-
-      - name: Release Gem
-        if: contains(github.ref, 'refs/tags/v')
-        uses: cadwallion/publish-rubygems-action@master
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
-          RELEASE_COMMAND: rake release          
+      - name: Build and publish to RubyGems
+        uses: actionshub/publish-gem-to-rubygems@main
+        with:
+          api_key: ${{ secrets.RUBY_GEMS_API_KEY }}
