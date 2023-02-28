@@ -12,7 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.0.0
-
+      - name: Configure Git
+        run: |
+        git config --local user.email "mvarlic@gmail.com"
+        git config --local user.name "mvarlic"
       - name: Release Gem
         if: contains(github.ref, 'refs/tags/v')
         uses: cadwallion/publish-rubygems-action@v1.0.0
