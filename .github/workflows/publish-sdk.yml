@@ -20,11 +20,6 @@ jobs:
         run: |
           git config --local user.email "mvarlic@gmail.com"
           git config --local user.name "mvarlic"
-      - name: Bump and Commit
-        run: |
-          yarn add standard-version
-          yarn run standard-version
-          git push --follow-tags
       - name: Push to rubygems.org
         run: |
           gem build *.gemspec
