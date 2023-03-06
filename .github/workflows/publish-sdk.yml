@@ -32,7 +32,9 @@ jobs:
         uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
         with:
           ruby-version: 2.4
-      - run: bundle install
+      - run: |
+          gem install bundler -v '~> 2.0, < 2.4'
+          bundle install
 
       - name: Publish to GPR
         run: |
