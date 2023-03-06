@@ -13,13 +13,18 @@ jobs:
           fetch-depth: 0 # need all the commits
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.4
+          ruby-version: 2.6.0
           bundler-cache: true
       - uses: actions/setup-node@v2
       - name: Configure Git
         run: |
           git config --local user.email "mvarlic@gmail.com"
           git config --local user.name "mvarlic"
+      - name: Bump and Commit
+        run: |
+          yarn add standard-version
+          yarn run standard-version
+          git push --follow-tags
       - name: Push to rubygems.org
         run: |
           gem build *.gemspec
