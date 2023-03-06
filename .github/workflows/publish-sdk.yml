@@ -33,7 +33,7 @@ jobs:
         with:
           ruby-version: 2.4
       - run: |
-          gem install bundler -v '~> 2.0, < 2.4'
+          gem install bundler -v '~> 1'
           bundle install
 
       - name: Publish to GPR
